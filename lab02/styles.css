@@ -1,0 +1,119 @@
+/* Reseteo Universal y Box Model */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Diseño de Tarjeta (Card) */
+.card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 650px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+}
+
+legend {
+    font-weight: bold;
+    color: #003366;
+    background-color: #fff;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+    font-size: 14px;
+}
+
+/* Estilizado de inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Estados interactivos (Pseudo-clases) */
+input:focus, select:focus, textarea:focus {
+    border-color: #3182ce;
+    outline: none;
+    box-shadow: 0 0 5px rgba(49, 130, 206, 0.5);
+}
+
+input:hover, select:hover, textarea:hover {
+    border-color: #999;
+}
+
+/* Estilos específicos para radio y checkbox para que se alineen bien */
+.radio-group, .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.radio-group label, .checkbox-group label {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+/* Botón interactivo */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-submit:hover {
+    background-color: #002244;
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}

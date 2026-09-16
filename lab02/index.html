@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro SGA - Lab 02</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="card">
+        <h2>Registro de Nuevo Estudiante (SGA)</h2>
+        <form action="#" method="POST">
+            
+            <!-- Bloque 1: Información Personal -->
+            <fieldset>
+                <legend>Información Personal</legend>
+                <div class="form-group">
+                    <label for="nombres">Nombres Completos:</label>
+                    <input type="text" id="nombres" name="nombres" value="Julian Adco" required>
+                </div>
+                <div class="form-group">
+                    <label for="codigo">Código de Estudiante (8 dígitos):</label>
+                    <input type="text" id="codigo" name="codigo" pattern="^[0-9]{8}$" title="Debe contener exactamente 8 dígitos numéricos" required>
+                </div>
+                <div class="form-group">
+                    <label for="fecha_nac">Fecha de Nacimiento:</label>
+                    <input type="date" id="fecha_nac" name="fecha_nac" min="1990-01-01" max="2008-12-31" required>
+                </div>
+            </fieldset>
+
+            <!-- Bloque 2: Información de la Cuenta -->
+            <fieldset>
+                <legend>Información de la Cuenta Académica</legend>
+                <div class="form-group">
+                    <label for="email">Correo Institucional:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña Segura:</label>
+                    <!-- Mínimo 8 caracteres, al menos un número y una letra mayúscula -->
+                    <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[A-Z]).{8,}" title="Mínimo 8 caracteres, al menos una mayúscula y un número" required>
+                </div>
+                <div class="form-group">
+                    <label for="carrera">Carrera Profesional:</label>
+                    <select id="carrera" name="carrera" required>
+                        <option value="">Seleccione una carrera...</option>
+                        <option value="sistemas" selected>Ingeniería de Sistemas</option>
+                        <option value="telecomunicaciones">Ingeniería de Telecomunicaciones</option>
+                        <option value="software">Ingeniería de Software</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Turno:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="manana" name="turno" value="mañana" required>
+                        <label for="manana">Mañana</label>
+                        <input type="radio" id="tarde" name="turno" value="tarde">
+                        <label for="tarde">Tarde</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Bloque 3: Adicionales -->
+            <fieldset>
+                <legend>Comentarios y Términos</legend>
+                <div class="form-group">
+                    <label for="comentarios">Comentarios adicionales:</label>
+                    <textarea id="comentarios" name="comentarios" rows="3" placeholder="Ej: Observaciones de convalidación..."></textarea>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="terminos" name="terminos" required>
+                    <label for="terminos">Acepto los términos y condiciones del sistema</label>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="btn-submit">Registrar Estudiante</button>
+        </form>
+    </div>
+</body>
+</html>
