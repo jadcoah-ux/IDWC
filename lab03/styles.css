@@ -1,0 +1,76 @@
+/* Reseteo Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+/* =========================================
+   2. HERO SECTION (Flexbox Mobile-First) 
+   ========================================= */
+.hero-section {
+    display: flex;
+    flex-direction: column; /* Apilado en móviles */
+    align-items: center;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background-color: #e9ecef;
+    gap: 2rem;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Media Query para Escritorio (Hero) */
+@media (min-width: 768px) {
+    .hero-section {
+        flex-direction: row; /* Lado a lado en PC */
+        text-align: left;
+        padding: 5rem 10%;
+    }
+    .hero-text {
+        flex: 1;
+    }
+    .hero-image {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+/* =========================================
+   3. CATÁLOGO DE CURSOS (CSS Grid Nativo)
+   ========================================= */
+.courses-section {
+    padding: 3rem 1.5rem;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 columna en móviles (<576px) */
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 2 columnas en tablets (>=576px) */
+@media (min-width: 576px) {
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+/* 3 o 4 columnas en escritorios (>=992px) con flexibilidad */
+@media (min-width: 992px) {
+    .courses-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    }
+}
