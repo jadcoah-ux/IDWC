@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas - Ingeniería de Sistemas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Gestor de Tareas Universitarias</h1>
+            <p>Escuela Profesional de Ingeniería de Sistemas</p>
+        </header>
+        
+        <div id="alertas"></div>
+        
+        <form id="task-form">
+            <input type="text" id="titulo" placeholder="Título de la tarea (ej. Laboratorio 04)" required>
+            <input type="text" id="curso" placeholder="Curso (ej. Desarrollo Web)" required>
+            <input type="date" id="fechaEntrega" required>
+            <button type="submit">Añadir Tarea</button>
+        </form>
+
+        <div class="filtros" id="filtros">
+            <button data-filter="todas" class="active">Todas</button>
+            <button data-filter="pendientes">Pendientes</button>
+            <button data-filter="completadas">Completadas</button>
+        </div>
+
+        <ul id="task-list"></ul>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#task-form input, #task-form button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#task-form button {
+    background-color: #003366;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.alerta-error {
+    background-color: #ffdddd;
+    color: #d8000c;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filtros button {
+    padding: 5px 15px;
+    cursor: pointer;
+    border: 1px solid #003366;
+    background: white;
+    color: #003366;
+    border-radius: 4px;
+}
+
+.filtros button.active {
+    background: #003366;
+    color: white;
+}
+
+#task-list {
+    list-style: none;
+}
+
+#task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fafafa;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 5px solid #ff9800;
+    border-radius: 4px;
+}
+
+/* Modificador dinámico del DOM */
+#task-list li.completada {
+    border-left-color: #4caf50;
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.acciones button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-toggle { background: #4caf50; color: white; }
+.btn-delete { background: #f44336; color: white; }

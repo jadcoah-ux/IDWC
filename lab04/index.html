@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas - Ingeniería de Sistemas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Gestor de Tareas Universitarias</h1>
+            <p>Escuela Profesional de Ingeniería de Sistemas</p>
+        </header>
+        
+        <div id="alertas"></div>
+        
+        <form id="task-form">
+            <input type="text" id="titulo" placeholder="Título de la tarea (ej. Laboratorio 04)" required>
+            <input type="text" id="curso" placeholder="Curso (ej. Desarrollo Web)" required>
+            <input type="date" id="fechaEntrega" required>
+            <button type="submit">Añadir Tarea</button>
+        </form>
+
+        <div class="filtros" id="filtros">
+            <button data-filter="todas" class="active">Todas</button>
+            <button data-filter="pendientes">Pendientes</button>
+            <button data-filter="completadas">Completadas</button>
+        </div>
+
+        <ul id="task-list"></ul>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
