@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "nombre": "Cálculo en una variable",
+    "codigo": "2501208",
+    "creditos": 5
+  },
+  {
+    "id": 2,
+    "nombre": "Estructuras Discretas II",
+    "codigo": "2501209",
+    "creditos": 3
+  },
+  {
+    "id": 3,
+    "nombre": "Introducción al Desarrollo Web",
+    "codigo": "2501210",
+    "creditos": 4
+  },
+  {
+    "id": 4,
+    "nombre": "Desarrollo de software orientado a objetos",
+    "codigo": "2501211",
+    "creditos": 4
+  },
+  {
+    "id": 5,
+    "nombre": "Taller de narrativa digital",
+    "codigo": "2501214",
+    "creditos": 3
+  }
+]
